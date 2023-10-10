@@ -84,43 +84,43 @@ def get_all_users(response: Response, tra_id: str = Header(...),device_id: str =
 
 
 
-# def get_user_by_id(id: int, tra_id, device_id):
-#     url = f"https://test-goldtech.rupiyatech.link/test/{id}"
+def get_user_by_id(id: int, tra_id, device_id):
+    url = f"https://test-goldtech.rupiyatech.link/test/{id}"
 
-#     headers = {
-#         "Tra-ID": tra_id,
-#         "Device-ID": device_id
-#     }
-#     response = requests.request('GET', url, headers=headers)
-#     response_json = response.json()
-#     print('response ', response_json)
-#     if str(response_json['status']) == 'success' and str(response.status_code) == '200':
+    headers = {
+        "Tra-ID": tra_id,
+        "Device-ID": device_id
+    }
+    response = requests.request('GET', url, headers=headers)
+    response_json = response.json()
+    print('response ', response_json)
+    if str(response_json['status']) == 'success' and str(response.status_code) == '200':
         
-#         return response_json
-#     else:
-#         return response_json
+        return response_json
+    else:
+        return response_json
     
 
 
-# @app.get("/test/{id}")
-# def get_user_data(id: int, response: Response, tra_id: str = Header(...),device_id: str = Header(...)):
+@app.get("/test/{id}")
+def get_user_data(id: int, response: Response, tra_id: str = Header(...),device_id: str = Header(...)):
     
-#     data = get_user_by_id(id, tra_id, device_id)
+    data = get_user_by_id(id, tra_id, device_id)
     
-#     try:
-#         data = (data['data'][0])
-#         print(data)
+    try:
+        data = (data['data'][0])
+        print(data)
 
-#         if data['status'] == 'success' and len(data['data']) > 0:
-#             response.status_code = status.HTTP_200_OK
-#             return {'status': 'success', 'error_code': 200, 'msg': data, 'data': data['data'][0]['details']}
-#         elif data['status'] == 'failure':
-#             return {'status': 'failure', 'error_code': 400, 'msg': data['msg'], 'data': []}
-#         else:
-#             return {'status': 'failure', 'error_code': 400, 'msg': 'No data found', 'data': []}
-#     except Exception as e:
-#         print(f"Error fetching user data: {str(e)}")
-#         return {'status': 'failure', 'error_code': 500, 'msg': 'No data found', 'data': []}
+        if data['status'] == 'success' and len(data['data']) > 2:
+            response.status_code = status.HTTP_200_OK
+            return {'status': 'success', 'error_code': 200, 'msg': data, 'data': data['data'][2]['details']}
+        elif data['status'] == 'failure':
+            return {'status': 'failure', 'error_code': 400, 'msg': data['msg'], 'data': []}
+        else:
+            return {'status': 'failure', 'error_code': 400, 'msg': 'No data found', 'data': []}
+    except Exception as e:
+        print(f"Error fetching user data: {str(e)}")
+        return {'status': 'failure', 'error_code': 500, 'msg': 'No data found', 'data': []}
     
 
 
