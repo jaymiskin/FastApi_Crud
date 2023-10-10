@@ -1,0 +1,32 @@
+-- MySQL Workbench usefull cmd
+
+-- use myfirst_schema;
+
+-- insert into new_table (product, serial_no) Values ('Iphone', 1), ('Laptop', 2), ('Mouse', 3);
+-- select * from new_table;
+-- update new_table set product = 'Earbuds', serial_no = 5 where id = 5;
+-- select * from new_table order by id DESC;
+-- select * from new_table where id <= 6 AND id >= 5 order by id;
+-- delete from new_table where id = 6;
+-- SELECT * FROM new_table limit 5;
+-- SELECT sum(serial_no) FROM new_table WHERE serial_no;
+-- SELECT count(serial_no) FROM new_table WHERE serial_no;
+-- SELECT avg(serial_no) FROM new_table WHERE serial_no;
+-- SELECT MIN(serial_no) AS SmallestS_no FROM new_table;
+-- SELECT MAX(serial_no) AS HigestS_no FROM new_table;
+-- SELECT * FROM new_table WHERE product LIKE '%i%' order by id;
+-- SELECT * FROM new_table WHERE product LIKE '%_i%' order by id;
+-- SELECT * FROM new_table WHERE product LIKE '%l__%' order by id;
+-- SELECT * FROM new_table WHERE product LIKE '%I_e%' order by id;
+-- SELECT * FROM new_table WHERE product LIKE 'i%e' order by id;
+-- SELECT * FROM new_table WHERE product LIKE 'wi%';
+-- SELECT * FROM new_table WHERE product LIKE '%re%';
+-- SELECT * FROM new_table WHERE product LIKE '_i_g';
+-- SELECT * FROM new_table WHERE product IN ('wire', 'ring', 'iphone','trimer') order by product desc;
+-- SELECT * FROM new_table WHERE serial_no BETWEEN 1 AND 10;
+-- SELECT * FROM new_table WHERE serial_no NOT BETWEEN 11 AND 20;
+-- SELECT * FROM new_table WHERE serial_no BETWEEN 1 AND 20 AND id NOT IN (1,2,3);
+-- SELECT * FROM new_table WHERE product BETWEEN 'iphone' AND 'ring' ORDER BY id;
+-- SELECT * FROM new_table WHERE created_at BETWEEN '2023-08-23 10:12:47.281552' AND '2023-08-23 12:10:59.333434' ORDER BY created_at;
+-- SELECT id AS CustomerID, product AS CustomerProduct FROM new_table;
+-- SELECT id, product + ', ' + product AS Address FROM new_table;
